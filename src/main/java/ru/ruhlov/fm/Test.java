@@ -1,20 +1,24 @@
 package ru.ruhlov.fm;
 
-public class Test {
-	
-	private String name;
 
-	public Test(String name) {		
-		this.name = name;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Test {	
+	private Team team;
+	private String name = "Artem";
+	
+	public Test(Team team) {		
+		this.team = team;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void getString() {
+		System.out.println(name);
+		team.getRoster();
 	}
-	
 
 }

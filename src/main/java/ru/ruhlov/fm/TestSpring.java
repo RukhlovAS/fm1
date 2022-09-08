@@ -1,18 +1,15 @@
 package ru.ruhlov.fm;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class TestSpring {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 		
-		Test test = context.getBean("test", Test.class);
+		Test test = context.getBean("test",Test.class);
 		
-		System.out.println(test.getName());
-		
+		test.getString();
 		context.close();
-		
-		Team team = new Team("My team");
-		team.getRoster();
 	}
 }
